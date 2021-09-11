@@ -1,40 +1,54 @@
-YOUR NAME Lab 2: Intro to HTML
-
-Selectors
-Main Page
-
-First, the basics.
-
-You need the following to build your website.
-
-HTML and CSS
-Javascript
-Node.js
-And other web development frameworks
-
-You should list your top 3 goals for the class below.
-
-Learn front-end web design
-Learn new programming languages
-Learn how to work with others in a technical space
-Learn popular web dev frameworks
-
-Let's Try Some Inline Elements
-
-Sometimes you want to draw attention to something in a line of text.
-
-Sometimes you want to strongly emphasize something in the text.
-
-Sometimes you want to do both.
-
-Empty Elements
-
-Soft line breaks can't wrap anything. Neither can image tags, or hard lines.
-Add a hard line under here, and make sure you've used some soft line breaks to match your page to the sample.
-
-Images 
-
-Don't forget to use alt text on your images. It's important for accessibility.
-
-Include a hyperlink here to your github repository for class.
-If you want your repo to be private, be sure to invite Prof A as a "collaborator."
+<!DOCTYPE html>
+<html>
+    <div class = 'wrapper'>
+  <head>
+      <div class = 'title'> <h1>Gaurav Gandhi Lab 1: Intro to HTML</h1></div>
+      <link rel='stylesheet' href='styles.css'/>
+      <nav>
+        <a href="selectors.html">Selectors</a>
+        <a href="index.html">Main Page</a>
+        </nav>
+      <h2>First, the basics.</h2>
+    <!-- Metadata goes here -->
+  </head>
+  <body>
+    <p>You need the following to build your website.</p>
+    <div class = 'section_1'>
+    <ul>
+    <li>HTML and CSS</li>
+    <li>Javascript</li>
+    <li>Node.js</li>
+    <li>And other web development frameworks</li>
+    </ul>
+    <span>
+    <p>My top five favorite albums are:</p>
+    <ol>
+    <li>Rodeo <em>(2015, Travis Scott)</em></li>
+    <li>Currents <em>(2015, Tame Impala)</em></li>
+    <li>The Dark Side of the Moon <em>(1973, Pink Floyd)</em> </li>
+    <li>American Idiot <em>(2005, Green Day)</em></li>
+    <li>Culture <em>(2017, Migos)</em></li>
+    </ol>
+    </span>
+    </div>
+    <div class = 'section_2'>
+    <h2>Let's Try Some Inline Elements</h2>
+    <p>Sometimes you want to <em>draw attention to something</em> in a line of text.</p>
+    <p>Sometimes you want to <strong>strongly emphasize something</strong> in the text.</p>
+    <p>Sometimes you want to <strong><em>do both</em></strong></p>
+    </div>
+    <h3>Empty Elements</h3>
+    <p>Soft line breaks can't wrap anything.<br/> Neither can image tags, or hard lines. <br/>
+        Add a hard line under here, and make sure you've used some soft line breaks to match your page to the sample.
+    </p>
+    <hr/>
+    <div class = 'slides'>
+    <h2>Images</h2>
+    <img src ='images/onigiri_1.png' alt='smiling mochi'> <img src ='images/onigiri_2.png' alt ='smiling mochi'> 
+    <img src ='images/onigiri_3.png' alt = 'smiling mochi'> <img src ='images/onigiri_4.png' alt = 'smiling mochi'>
+    </div>
+    <hr/>
+    <a href="https://github.com/gauravgandhi01/INST377-Lab-Work"> A link to my GitHub Repository</a>
+  </body>
+</div>
+</html>
