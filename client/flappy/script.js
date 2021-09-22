@@ -5,10 +5,10 @@ document.addEventListener('DOMContentLoaded' , () => {
     const ground = document.querySelector('.ground-moving')
 
     let birdLeft = 220
-    let birdBottom = 100
+    let birdBottom = 150
     let gravity = 3
     let isGameOver = false
-    let gap = 430
+    let gap =430
 
 
     function startGame() {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded' , () => {
         obstacle.style.bottom = obstacleBottom + 'px'
         topObstacle.style.bottom = obstacleBottom + gap + 'px'
 
-        function moveObstacle() {
+        function moveObstacle(){
             obstacleLeft -=2
             obstacle.style.left = obstacleLeft + 'px'
             topObstacle.style.left = obstacleLeft + 'px'
@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded' , () => {
                 clearInterval(timerId)
             }
         }
-        let timerId = setInterval(moveObstacle, 20) 
+        let timerId =setInterval(moveObstacle, 20) 
         if (!isGameOver) setTimeout(generateObstacle, 3000)
 
     }
