@@ -26,7 +26,22 @@
     }
 
     function displayMatches(){
-        
+         const matchArray = findMatches(this.value, food);
+        const html = matchArray.map(city => {
+            return `<li> 
+                <span class = "name">${food.name}</span> 
+                <span class = "city">${food.city}, ${food.state}</span> 
+            </li>
+            `;
+        }).join('');
+        suggestions.innerHTML = html;
     }
+        
+    const searchInput = document.querySelector('.search');
+    const suggestions = document.querySelector('.suggestions')
+
+    searchInput.addEventListener('change', displayMatches)
+    searchInput.addEventListener('keyup', displayMatches)
+
     </script>
 </body>
