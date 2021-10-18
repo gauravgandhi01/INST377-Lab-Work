@@ -16,6 +16,8 @@ body {
 .columns {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
@@ -29,5 +31,5 @@ body {
 .box{
   font-size: larger;
   background-color: cyan;
-  justify-content: center;
+  
 }
