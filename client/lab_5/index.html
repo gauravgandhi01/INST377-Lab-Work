@@ -6,19 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <link rel="stylesheet" href="styles.css" />
-    <div class = "box"> 
-        <title>Gaurav's Lab 5</title>
-    </div>
+    <div class="box">
+        Gaurav's Lab 5
+      </div>
   </head>
 <body>
     <div class = "wrapper">
         <div class = "container">
             <div class ="columns">
-                <div class ="column">
-                    <button class = "button is-primary click_demo"> Primary Button </button>
+                <div class ="column is-one-quarter">
+                    <form class="box">
+                    <div class="field">
+                      <label class="label">Full Name</label>
+                      <div class="control">
+                        <input class="input">
+                      </div>
+                    </div>
+                    <div class="field">
+                      <label class="label">Food Preference</label>
+                      <div class="control">
+                        <input class="input">
+                      </div>
+                    </div>
+                    <div class="field">
+                        <label class = "label">Veggie or Vegan?</label>
+                        <div class="control">
+                          <label class="radio">
+                            <input type="radio" name="question">
+                            Yes
+                          </label>
+                          <label class="radio">
+                            <input type="radio" name="question">
+                            No
+                          </label>
+                        </div>
+                      </div>
+                      <div class = "button">
+                      <form action='/api' method="GET" class="body"> 
+                    <button class="button is-primary">Submit</button>
+                    </form>
+                </div>
+                
+                  </form>
                 </div>
                 <div class = "column">
-
+                    <div class="box">
+                        This is going to be something in two weeks.
+                      </div>
                 </div>
         </div>
     </div>

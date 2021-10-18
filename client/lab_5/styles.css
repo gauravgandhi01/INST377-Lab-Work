@@ -26,6 +26,8 @@ body {
   margin-top: 25px;
 }
 
-.box title{
-  color: aqua;
+.box{
+  font-size: larger;
+  background-color: cyan;
+  justify-content: center;
 }
