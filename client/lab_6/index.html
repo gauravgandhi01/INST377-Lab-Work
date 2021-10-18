@@ -9,39 +9,32 @@
     <h1> Lab 6 </h1>
     <form class = "search form">
         <input type="text" class="search">
+        <ul class="suggestions">
+            <li>Filter for restaurants by city</li>
+          </ul>
     </form>
 
     <script>
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
     const food = [];
-    fetch(endpoint)
-    .then(blob => blob.json())
-    .then(data => food.push(...data))
+    fetch(endpoint).then(blob => blob.json()).then(data => food.push(...data))
 
-    function findMatches(wordToMatch, food){
-        return food.filter(city => {
+    function findMatches( wordToMatch, food){
+        return food.filter(cityname => {
             const regex = new RegExp(wordToMatch, 'gi' );
-             return city.city.match(regex)
+        return cityname.city.match(regex)
         } );
     }
 
     function displayMatches(){
-         const matchArray = findMatches(this.value, food);
-        const html = matchArray.map(city => {
-            return `<li> 
-                <span class = "name">${food.name}</span> 
-                <span class = "city">${food.city}, ${food.state}</span> 
-            </li>
-            `;
-        }).join('');
-        suggestions.innerHTML = html;
+        matchArray = findMatches(this, food);
+        console.log(matchArray);
     }
         
     const searchInput = document.querySelector('.search');
-    const suggestions = document.querySelector('.suggestions')
+    const suggestions = document.querySelector('.suggestions');
 
-    searchInput.addEventListener('change', displayMatches)
-    searchInput.addEventListener('keyup', displayMatches)
-
+    searchInput.addEventListener('keyup', displayMatches);
+     
     </script>
 </body>
