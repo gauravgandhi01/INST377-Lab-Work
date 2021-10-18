@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,20 +6,21 @@
   <title>Type Ahead 👀</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+<h1> Gaurav's Lab 6</h1>
   <form class="search-form">
     <input type="text" class="search">
     <ul class="suggestions">
       <li>Filter for a city</li>
-      <li>or a state</li>
     </ul>
   </form>
+ 
 <script>
-
+  async function windowActions(){
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
-    const food = [];
-    fetch(endpoint).then(blob => blob.json()).then(data => food.push(...data))
+    const request = await fetch(endpoint);
+    const food = await request.json();
 
     function findMatches( wordToMatch, food){
         return food.filter(restaurant => {
@@ -27,24 +29,31 @@
         } );
     }
 
-    function displayMatches(){
-        matchArray = findMatches(this.value, food);
-        const html = matchArray.map(city => {
+    function displayMatches(event){
+        matchArray = findMatches(event.target.value, food);
+        const html = matchArray.map(restaurant => {
             return `
+            <ul>
             <li>  
-                <span class = "name">${food.name}</span> 
-                <span class = "city">${food.city}, ${food.state}</span> 
-            </li>
+                <div class = "name">${restaurant.name} </div> </li> 
+                <div class = "category">${restaurant.category} </div> 
+                <div class = "address" >${restaurant.address_line_1} </div>
+                <div class = "city">${restaurant.city}, MD</div> <br>
+            </ul>
                 `;
-    }).join('');
+    }).join("") ;
     suggestions.innerHTML = html;
-    console.log(matchArray);
     }
         
     const searchInput = document.querySelector('.search');
     const suggestions = document.querySelector('.suggestions');
 
-    searchInput.addEventListener('keyup', displayMatches);
+    searchInput.addEventListener('keyup', (evt) => {displayMatches(evt)});
      
+  
+  }
+  window.onload = windowActions;
     </script>
+
 </body>
+
