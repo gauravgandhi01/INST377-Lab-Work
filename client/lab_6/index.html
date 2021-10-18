@@ -6,29 +6,39 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1> Lab 6 </h1>
-    <form class = "search form">
-        <input type="text" class="search">
-        <ul class="suggestions">
-            <li>Filter for restaurants by city</li>
-          </ul>
-    </form>
 
-    <script>
+  <form class="search-form">
+    <input type="text" class="search">
+    <ul class="suggestions">
+      <li>Filter for a city</li>
+      <li>or a state</li>
+    </ul>
+  </form>
+<script>
+
     const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
     const food = [];
     fetch(endpoint).then(blob => blob.json()).then(data => food.push(...data))
 
     function findMatches( wordToMatch, food){
-        return food.filter(cityname => {
+        return food.filter(restaurant => {
             const regex = new RegExp(wordToMatch, 'gi' );
-        return cityname.city.match(regex)
+        return restaurant.city.match(regex)
         } );
     }
 
     function displayMatches(){
-        matchArray = findMatches(this, food);
-        console.log(matchArray);
+        matchArray = findMatches(this.value, food);
+        const html = matchArray.map(city => {
+            return `
+            <li>  
+                <span class = "name">${food.name}</span> 
+                <span class = "city">${food.city}, ${food.state}</span> 
+            </li>
+                `;
+    }).join('');
+    suggestions.innerHTML = html;
+    console.log(matchArray);
     }
         
     const searchInput = document.querySelector('.search');
